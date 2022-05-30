@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B21B0A83-32DA-410C-A93B-8392FB9C9650}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DL_EF</RootNamespace>
+    <AssemblyName>DL_EF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aseguradora.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AseguradoraGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AseguradoraGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Colonia.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColoniaGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Dependiente.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DependienteTipo.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DireccionGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaPoliza.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetByIdEmpresa_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LEscogidoAseguradora.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEscogidoAseguradora.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LEscogidoAseguradora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LEscogidoAseguradora.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEscogidoAseguradora.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientoDetalle.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientoTipo.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Municipio.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MunicipioGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pai.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaisGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poliza.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PolizaGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PolizaGetByID_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPoliza.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPolizaGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPolizaGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioGetAll_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioGetById_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioGetByUserName_Result.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vigencia.cs">
+      <DependentUpon>LEscogidoAseguradora.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LEscogidoAseguradora.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LEscogidoAseguradora.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="LEscogidoAseguradora.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LEscogidoAseguradora.edmx</DependentUpon>
+      <LastGenOutput>LEscogidoAseguradora.Context.cs</LastGenOutput>
+    </None>
+    <None Include="LEscogidoAseguradora.edmx.diagram">
+      <DependentUpon>LEscogidoAseguradora.edmx</DependentUpon>
+    </None>
+    <None Include="LEscogidoAseguradora.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LEscogidoAseguradora.edmx</DependentUpon>
+      <LastGenOutput>LEscogidoAseguradora.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

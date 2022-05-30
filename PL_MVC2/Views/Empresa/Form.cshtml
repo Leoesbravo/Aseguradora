@@ -1,0 +1,99 @@
+﻿@model ML.Empresa
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Empresa</h2>
+            <h5>Ingrese los datos de la empresa:</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Form", "Empresa", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.IdEmpresa, new { @class = "hidden" })
+                            @Html.TextBoxFor(model => model.IdEmpresa, new { @class = "hidden form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.IdEmpresa)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Nombre)
+                            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre" })
+                            @Html.ValidationMessageFor(model => model.Nombre, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Telefono)
+                            @Html.TextBoxFor(model => model.Telefono, "{0:#.#}", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Telefono, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Email)
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "txtEmail" })
+                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.DireccionWeb)
+                            @Html.TextBoxFor(model => model.DireccionWeb, new { @class = "form-control", @id = "txtDireccionWeb" })
+                            @Html.ValidationMessageFor(model => model.DireccionWeb, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Logo)
+                            <input type="file" name="ImagenData" onchange="Previsualizar(this);">
+                            @if (Model.Logo != null)
+                            {
+
+                                <img id="ImagenPreview" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Logo)" width="200" height="200" />
+                            }
+                            else
+                            {
+                                <img id="ImagenPreview" src="~/Images/FotoVacia.png" style=" height:200px; width:200px;" />
+                            }
+                            @Html.ValidationMessageFor(model => model.Logo)
+                        </div>
+                        @Html.HiddenFor(model => model.Logo)
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="submit" value="Guardar" class="btn btn-success" />
+                            @Html.ActionLink("Regresar", "GetAll", "Empresa", htmlAttributes: new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Previsualizar(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#ImagenPreview').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

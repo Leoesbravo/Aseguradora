@@ -1,0 +1,51 @@
+﻿@model ML.SubPoliza
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="=col-md-12">
+            <h2>SubPolizas</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Seleccione ""Agregar"" para registrar una Sub Poliza</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1 ">
+            @Html.ActionLink("Agregar", "Form", "SubPoliza", htmlAttributes: new { @class = "btn btn-success" })
+        </div>
+        <br> <br />
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <table class="table table-bordered table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <td>Editar</td>
+                        <td class="hidden">IdSubPoliza</td>
+                        <td>Puesto</td>
+                        <td>Eliminar</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (ML.SubPoliza subpoliza in Model.Subpolizas)
+                    {
+                        <tr>
+                            <td><a class="btn  btn-warning  glyphicon glyphicon-edit" href="@Url.Action("Form", "SubPoliza", new { IdSubPoliza = subpoliza.IdSubPoliza })"></a></td>
+                            <td class="hidden">@subpoliza.IdSubPoliza</td>
+                            <td>@subpoliza.Nombre</td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash " href="@Url.Action("Delete", "SubPoliza", new { IdSubPoliza = subpoliza.IdSubPoliza })" onclick="return confirm('¿Estas seguro que deseas eliminar este registro?');"></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

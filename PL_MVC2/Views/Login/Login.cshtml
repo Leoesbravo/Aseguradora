@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+@model ML.Usuario
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/content/Login.css" rel="stylesheet" />
+</head>
+<body>
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+    <div class="form">
+        <form class="login-form">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "User Name", type = "text" })
+
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Password", type = "password" })
+            <input type="submit" value="Iniciar Sesión" />
+
+            @Html.ActionLink("Olvide Mi Contraseña", "ValidarUser", "Login", htmlAttributes: new { @class = "btn" })
+
+        </form>
+    </div>
+           }
+</body>
+</html> 

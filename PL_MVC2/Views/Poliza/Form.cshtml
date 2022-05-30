@@ -1,0 +1,129 @@
+﻿@model ML.Poliza
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Poliza</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Form", "Poliza", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Nombre)
+                            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Nombre)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.SubPoliza)
+                            @Html.DropDownListFor(model => model.SubPoliza.IdSubPoliza, new SelectList(Model.SubPoliza.Subpolizas, "IdSubPoliza", "Nombre"), "Seleccione una Opcion", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.SubPoliza)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.NumeroPoliza)
+                            @Html.TextBoxFor(model => model.NumeroPoliza, new { @class = "form-control", @id = "txtNumeroPoliza", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.NumeroPoliza)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Vigencia.FechaInicio)
+                            @Html.TextBoxFor(model => model.Vigencia.FechaInicio, new { @class = "form-control", @id = "txtFechaRegistro", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Vigencia.FechaInicio)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Vigencia.FechaFin)
+                            @Html.TextBoxFor(model => model.Vigencia.FechaFin, new { @class = "form-control", @id = "txtFechaFin", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Vigencia.FechaFin)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Usuario)
+                            @Html.DropDownListFor(model => model.Usuario.IdUsuario, new SelectList(Model.Usuario.Usuarios, "IdUsuario", "Nombre"), "Seleccione una Opcion", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Usuario)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.IdPoliza, new { @class = "hidden" })
+                            @Html.TextBoxFor(model => model.IdPoliza, new { @class = "hidden form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.IdPoliza)
+                        </div>
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Vigencia.IdVigencia, new { @class = "hidden" })
+                            @Html.TextBoxFor(model => model.Vigencia.IdVigencia, new { @class = "hidden form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Vigencia.IdVigencia)
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="submit" value="Guardar" class="btn btn-success" />
+                            @Html.ActionLink("Regresar", "GetAll", "Poliza", htmlAttributes: new { @class = "btn btn-danger", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+<script type="text/javascript">
+    var j = jQuery.noConflict();
+    j(function () {
+        j("#txtFechaRegistro").datepicker({
+            dateFormat: 'dd/mm/yy',
+            showOn: 'button',
+            buttonImage: "../Images/calendar.png",
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true
+        });
+        $(".ui-datepicker-trigger").css("width", "30px");
+        $(".ui-datepicker-trigger").css("height", "30px");
+    });
+
+    var j = jQuery.noConflict();
+    j(function () {
+        j("#txtFechaFin").datepicker({
+            dateFormat: 'dd/mm/yy',
+            showOn: 'button',
+            buttonImage: "../Images/calendar.png",
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true
+        });
+        $(".ui-datepicker-trigger").css("width", "30px");
+        $(".ui-datepicker-trigger").css("height", "30px");
+    });
+</script>

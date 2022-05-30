@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="23f46f958b954562a06ed5eff50099ba" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Aseguradora" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Colonia" Width="1.5" PointX="6" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Dependiente" Width="1.5" PointX="12.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.DependienteTipo" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Direccion" Width="1.5" PointX="8.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Empleado" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Empresa" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.EmpresaPoliza" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Estado" Width="1.5" PointX="1.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Movimiento" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.MovimientoDetalle" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.MovimientoTipo" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Municipio" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Pai" Width="1.5" PointX="1.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Poliza" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Rol" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Status" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.SubPoliza" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Usuario" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Vigencia" Width="1.5" PointX="10.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.database_firewall_rules" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.ipv6_database_firewall_rules" PointX="13.375" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Asegurado__IdUsu__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Colonia__IdMunic__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Direccion__IdCol__2DE6D218" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Dependien__IdDep__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Dependien__Numer__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Direccion__IdUsu__2EDAF651" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Empleado__IdEmpr__30C33EC3" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Empleado__IdPoli__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdEmp__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdPol__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdUsu__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Estado__IdPais__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Municipio__IdEst__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdMov__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdUsu__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdSta__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Poliza__IdSubPol__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Poliza__IdUsuari__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Vigencia__IdPoli__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Usuario__IdRol__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Vigencia__IdUsua__3C34F16F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

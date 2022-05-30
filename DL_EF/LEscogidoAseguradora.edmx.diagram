@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="023c386f6aef461ea3fdfa0037d0b778" Name="Diagram1" ZoomLevel="51">
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Aseguradora" Width="1.5" PointX="3.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Usuario" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Asegurado__IdUsu__145C0A3F" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Colonia" Width="1.5" PointX="10.125" PointY="5.125" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Direccion" Width="1.5" PointX="12.375" PointY="2.875" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Estado" Width="1.5" PointX="5.625" PointY="5.25" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Municipio" Width="1.5" PointX="7.875" PointY="5.25" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Pai" Width="1.75" PointX="3" PointY="5.375" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Colonia__IdMunic__30F848ED" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Direccion__IdCol__33D4B598" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Direccion__IdUsu__38996AB5" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Estado__IdPais__239E4DCF" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Municipio__IdEst__2E1BDC42" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Empresa" Width="1.5" PointX="0.5" PointY="6.75" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Empleado" Width="1.5" PointX="3" PointY="8.125" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Empleado__IdEmpr__4E88ABD4" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.SubPoliza" Width="1.5" PointX="3" PointY="16.25" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Poliza" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Vigencia" Width="1.5" PointX="7.5" PointY="1.625" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Poliza__IdSubPol__787EE5A0" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Poliza__IdUsuari__797309D9" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Vigencia__IdPoli__7D439ABD" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Vigencia__IdUsua__7C4F7684" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Movimiento" Width="1.5" PointX="5.375" PointY="0.875" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.MovimientoDetalle" Width="1.5" PointX="9.625" PointY="11.625" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.MovimientoTipo" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Status" Width="1.5" PointX="7.375" PointY="11.75" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdMov__1CBC4616" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdUsu__1DB06A4F" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Movimient__IdSta__17F790F9" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Dependiente" Width="1.5" PointX="5.25" PointY="14.375" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.DependienteTipo" Width="1.5" PointX="3" PointY="13.375" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.EmpresaPoliza" Width="1.5" PointX="12.5" PointY="6.75" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Dependien__IdDep__3493CFA7" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Dependien__Numer__339FAB6E" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Empleado__IdPoli__3587F3E0" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdEmp__2B0A656D" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdPol__2BFE89A6" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__EmpresaPo__IdUsu__2CF2ADDF" />
+        <EntityTypeShape EntityType="LEscogidoAseguradoraModel.Rol" Width="1.5" PointX="0.75" PointY="14.875" />
+        <AssociationConnector Association="LEscogidoAseguradoraModel.FK__Usuario__IdRol__3C34F16F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

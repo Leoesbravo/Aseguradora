@@ -1,0 +1,65 @@
+﻿@model ML.ErrorExcel
+@{
+    ViewBag.Title = "CargaMasiva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Carga Masiva</h2>
+
+<div class="container">
+    <div class="row">
+
+    </div>
+
+</div>
+@using (Html.BeginForm("CargaMasiva", "EmpleadoCargaMasiva", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-md-3">
+        <input type="file" id="fuEmpleados" name="ExcelEmpleado" />
+    </div>
+
+    if (!Model.Correct)
+    {
+        <div class="col-md-1">
+            <input type="submit" value="Procesar" class="btn btn-info" />
+        </div>
+    }
+    else
+    {
+       <div class="col-md-4">
+           @Html.LabelFor(model => model.Empleado.empresa)
+           @Html.DropDownListFor(model => model.Empleado.empresa.IdEmpresa, new SelectList(Model.Empleado.empresa.Empresas, "IdEmpresa", "Nombre"), "Selecciona una opción", new { @class = "form-control" })
+           @Html.ValidationMessageFor(model => model.Empleado.empresa.IdEmpresa)
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Iniciar Carga" class="btn btn-success" />
+        </div>
+    }
+
+
+
+}
+@if (Model.Errores.Count > 0) 
+{
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <td>Registro</td>
+                <td>Error</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ML.ErrorExcel error in Model.Errores)
+            {
+                <tr>
+                    <td>@error.IdRegistro</td>
+                    <td>@error.Mensaje</td>
+                </tr>
+            }
+
+
+
+        </tbody>
+    </table>
+}

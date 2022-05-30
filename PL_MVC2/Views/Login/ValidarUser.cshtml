@@ -1,0 +1,28 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "ValidarUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Validar Usuario</h2>
+</br>
+<h5 class="text-center text-info">Ingresa el User Name de tu cuenta para recuperar el password</h5>
+</br></br>
+
+@using (Html.BeginForm("ValidarUser", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-2 col-lg-offset-5">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", autocomplete = "off", placeholder = "Nombre de Usuario" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-4 col-lg-offset-5">
+            <input type="submit" value="Enviar" class="btn btn-success" />
+            @Html.ActionLink("Cancelar", "Login", "Login", htmlAttributes: new { @class = "btn btn-danger" })
+        </div>
+    </div>          
+</div>
+}
+
